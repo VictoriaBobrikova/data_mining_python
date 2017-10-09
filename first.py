@@ -1,1 +1,1 @@
-print('Привет, Мир');
+print("Hello, Python")
