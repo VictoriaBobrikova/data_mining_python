@@ -7,8 +7,14 @@
 
 import scrapy
 
-
-class ProjScrapingItem(scrapy.Item):
+class student(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    id = scrapy.Field()
+    city = scrapy.Field()
+    uni_city = scrapy.Field()
+    university = scrapy.Field()
+    hometown = scrapy.Field()
+    edu_status = scrapy.Field()
+    url = scrapy.Field()
     pass
