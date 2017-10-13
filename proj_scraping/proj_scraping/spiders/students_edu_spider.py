@@ -1,4 +1,4 @@
-from scrapy.spiders import CrawlSpider
+from scrapy.contrib.spiders import CrawlSpider, Rule
 
 
 class StudentSpider(CrawlSpider):
@@ -8,6 +8,6 @@ class StudentSpider(CrawlSpider):
         "https://vk.com/search?c%5Bcity%5D=2&c%5Bcountry%5D=1&c%5Bper_page%5D=40&c%5Bphoto%5D=1&c%5Bsection%5D=people&c%5Buniversity%5D=56"
     ]
     rules = (
-        Rule(),
+        Rule(LinkExtractor(allow=())),
         Rule()
     )
