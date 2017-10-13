@@ -1,0 +1,6 @@
+http://pythonicway.com/python-examples/python-terminal-examples/20-python-html-parser - html.parser
+http://python.math-hse.info:8080/github/ischurov/pythonhse/blob/master/Lecture%208.ipynb - структура html
+https://www.8host.com/blog/rabota-s-veb-dannymi-s-pomoshhyu-requests-i-beautiful-soup-v-python-3/ - requests и BeautifulSoup
+http://docs.python-requests.org/en/master/ - надо разобраться с этим, т.к. запрос requests.get выводит не полный код страницы.
+Пока не удается извлечь данные, которые разворачиваются при нажатии на ссылку. Такие, как "Показать полную информацию".
+Всё, что внутри этой "кнопки", не удаётся отобразить в коде
