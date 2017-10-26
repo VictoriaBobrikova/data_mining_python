@@ -25,29 +25,36 @@ header = {'User-Agent':str(ua.chrome)}
 print(header)
 
 path = "Home_Town.csv"
-i=0
 j=0
+bdate=17
+
 answer = [{'number': 'dict','url': 'dict', 'id': 'dict', 'home town': 'dict'}]
 with open(path, 'w', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=answer[0])
     writer.writeheader()
-    while i<=48:
-        if i==0:
-            url = "https://vk.com/search?c%5Bcity%5D=2&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bper_page%5D=40&c%5Bphoto%5D=1&c%5Bsection%5D=people&c%5Buniversity%5D=56&offset=0"
-        else:
-            url = "https://vk.com/search?c%5Bcity%5D=2&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bper_page%5D=40&c%5Bphoto%5D=1&c%5Bsection%5D=people&c%5Buniversity%5D=56&offset="+str(20+i*20)
-        r=requests.get(url, headers=header)
-        print(r.ok)
-        page = BeautifulSoup(r.text, 'html.parser')
-        #print(page.prettify())
-        tags=page.findAll("div", {"class":"labeled name"})
-        #print (tags)
-        print('Page', i+1)
-        for tag in tags:
-            some=tag.findAll("a", {"class": None})
-            for link in some:
-                j=j+1
-                print (j,')' ,link.get('href'))
-                user_parser(j, link.get('href'))
-        i=i+1
-        time.sleep(1)
+    while bdate<=25:
+        sex=1
+        while sex<=2:
+            i=1
+            while i<=48:
+                if i==0:
+                    url = "https://vk.com/search?c%5Bage_from%5D="+str(bdate)+"&c%5Bage_to%5D="+str(bdate)+"&c%5Bcity%5D=2&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bper_page%5D=40&c%5Bphoto%5D=1&c%5Bsection%5D=people&c%5Bsex%5D="+str(sex)+"&c%5Buniversity%5D=56&offset=0"
+                else:
+                    url = "https://vk.com/search?c%5Bage_from%5D="+str(bdate)+"&c%5Bage_to%5D="+str(bdate)+"&c%5Bcity%5D=2&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bper_page%5D=40&c%5Bphoto%5D=1&c%5Bsection%5D=people&c%5Bsex%5D="+str(sex)+"&c%5Buniversity%5D=56&offset="+str(20+i*20)
+                r=requests.get(url, headers=header)
+                print(r.ok)
+                page = BeautifulSoup(r.text, 'html.parser')
+                #print(page.prettify())
+                tags=page.findAll("div", {"class":"labeled name"})
+                #print (tags)
+                print('Page', i+1)
+                for tag in tags:
+                    some=tag.findAll("a", {"class": None})
+                    for link in some:
+                        j=j+1
+                        print (j,')' ,link.get('href'))
+                        user_parser(j, link.get('href'))
+                i=i+1
+                time.sleep(0.33)
+            sex=sex+1
+        bdate=bdate+1
