@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af70f418-d0b4-4a77-ab7f-1a8ace237dd3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data_processing.py" afterPath="$PROJECT_DIR$/Data_processing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Home_Town.csv" afterPath="$PROJECT_DIR$/Home_Town.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
