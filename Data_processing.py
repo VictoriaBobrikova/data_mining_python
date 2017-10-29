@@ -1,5 +1,10 @@
 import csv
+<<<<<<< HEAD
 
+=======
+import matplotlib.pyplot as plt
+import numpy as np
+>>>>>>> branch_daniil
 
 j = 0
 
@@ -38,4 +43,40 @@ for j in range(len(users)):
         cities.append(users[j][3])
 
 print(len(cities))
+<<<<<<< HEAD
 print(set(cities))
+=======
+print(set(cities))
+c=list(set(cities))
+
+for i in range(len(c)):  #считаем города, которые встречаются один раз, мусором и статистически не важными. Удаляем мусор
+    if cities.count(c[i])==1:
+        cities.remove(c[i])
+print(cities)
+print("3)", set(cities))
+print(len(set(cities)))
+
+c=list(set(cities))
+c1=[]
+calc=[]
+
+for i in range(len(c)):
+    c1.append(cities.count(c[i]))
+for i in range(len(c)):
+    calc.append([c1[i],c[i]])
+calc.sort(reverse=True)
+print(calc)
+city=[]
+city_num=[]
+for i in range(10):
+    city_num.append(calc[i][0])
+    city.append(calc[i][1])
+print(city)
+print(city_num)
+
+fig = plt.figure()
+plt.bar(city, city_num)
+plt.title('Simple bar chart')
+plt.grid(True)   # линии вспомогательной сетки
+plt.show()
+>>>>>>> branch_daniil

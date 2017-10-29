@@ -1,5 +1,8 @@
 number,url,id,home town
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> branch_daniil
 1,/id156885700,156885700,Cаратов
 2,/lucky.player,151184485,Error
 3,/id145398822,145398822,Error
@@ -9409,6 +9412,7 @@ number,url,id,home town
 9407,/k.priluchnyy,127548554,Error
 9408,/id111123997,111123997,Бишкек
 9409,/mirgorodskiy_lev,100657306,"Усть-Каменогрск,Wroclaw"
+<<<<<<< HEAD
 =======
 1,/andrew,6492,Санкт-Петербург
 2,/sobolevbro,2183360,Санкт-Петербург
@@ -9990,3 +9994,5 @@ number,url,id,home town
 578,/id74556,74556,Санкт-Петербург
 579,/frolovrn,43982,Питер
 >>>>>>> 8b256150220cf0b4c83f0960e7542ced13c03471
+=======
+>>>>>>> branch_daniil
