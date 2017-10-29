@@ -1,10 +1,6 @@
 import csv
-<<<<<<< HEAD
-
-=======
 import matplotlib.pyplot as plt
 import numpy as np
->>>>>>> branch_daniil
 
 j = 0
 
@@ -43,9 +39,6 @@ for j in range(len(users)):
         cities.append(users[j][3])
 
 print(len(cities))
-<<<<<<< HEAD
-print(set(cities))
-=======
 print(set(cities))
 c=list(set(cities))
 
@@ -79,4 +72,3 @@ plt.bar(city, city_num)
 plt.title('Simple bar chart')
 plt.grid(True)   # линии вспомогательной сетки
 plt.show()
->>>>>>> branch_daniil
