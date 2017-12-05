@@ -29,13 +29,13 @@ def user_parser (j, id):
     r = requests.get(url)
     page = BeautifulSoup(r.text, 'html.parser')
     try:
-        answer = [{'number': str(j),'url': id, 'id': page.uid.get_text(), 'home town': page.home_town.get_text()}]
+        answer = [{'number': str(j),'url': id, 'id': page.uid.get_text(), 'home town': page.home_town.get_text(), 'name': page.first_name.get_text()}]
     except AttributeError:
-        answer = [{'number': str(j),'url': id, 'id': page.uid.get_text(), 'home town': 'Error'}]
+        answer = [{'number': str(j),'url': id, 'id': page.uid.get_text(), 'home town': 'Error', 'name': page.first_name.get_text()}]
     try:
         writer.writerows(answer)
     except UnicodeEncodeError:
-        answer = [{'number': str(j), 'url': id, 'id': page.uid.get_text(), 'home town': 'Mudak'}]
+        answer = [{'number': str(j), 'url': id, 'id': page.uid.get_text(), 'home town': 'Mudak', 'name': page.first_name.get_text()}]
         writer.writerows(answer)
     time.sleep(0.33)
 
