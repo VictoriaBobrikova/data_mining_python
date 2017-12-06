@@ -7,10 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
@@ -23,7 +19,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`student_sex` (
   PRIMARY KEY (`student_name`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`student`
 -- -----------------------------------------------------
@@ -31,11 +26,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`student` (
   `vk_id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `home_town` VARCHAR(45) NOT NULL,
---  `student_sex_student_name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`vk_id`),
---  INDEX `fk_student_student_sex_idx` (`student_sex_student_name` ASC),
     CONSTRAINT `fk_student_student_sex`
---    FOREIGN KEY (`student_sex_student_name`)
     FOREIGN KEY (`name`)
       REFERENCES `mydb`.`student_sex` (`student_name`)
     ON DELETE NO ACTION
