@@ -29,14 +29,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`student` (
   `vk_id` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
-  `home_town` VARCHAR(45) NULL,
-  `student_sex_student_name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`vk_id`, `student_sex_student_name`),
-  INDEX `fk_student_student_sex_idx` (`student_sex_student_name` ASC),
-  CONSTRAINT `fk_student_student_sex`
-    FOREIGN KEY (`student_sex_student_name`)
-    REFERENCES `mydb`.`student_sex` (`student_name`)
+  `name` VARCHAR(45) NOT NULL,
+  `home_town` VARCHAR(45) NOT NULL,
+--  `student_sex_student_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`vk_id`),
+--  INDEX `fk_student_student_sex_idx` (`student_sex_student_name` ASC),
+    CONSTRAINT `fk_student_student_sex`
+--    FOREIGN KEY (`student_sex_student_name`)
+    FOREIGN KEY (`name`)
+      REFERENCES `mydb`.`student_sex` (`student_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
