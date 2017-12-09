@@ -147,7 +147,7 @@ print(table)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-plt.barh(towns[0:4], values_percent[0:4], align='center', color='orange')
+plt.barh(towns[1:11], values_percent[1:11], align='center', color='orange')
 axes.set_xscale('linear')
 plt.title('Распределение студентов в %')
 plt.grid(True)  # линии вспомогательной сетки
